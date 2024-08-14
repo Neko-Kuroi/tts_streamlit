@@ -16,7 +16,7 @@ from pedalboard import Pedalboard, Reverb, Gain, Phaser
 from pedalboard.io import AudioFile
 
 # Make a Pedalboard object, containing multiple audio plugins:
-board = Pedalboard([Gain(gain_db=1), Reverb(room_size=0.00001)])
+board = Pedalboard([Gain(gain_db=2), Reverb(room_size=0.00001)])
 
 
 VOICE3 = "en-US-JennyNeural"
@@ -75,9 +75,9 @@ EXIT_JS = """
 """
 
 # Embed the JavaScript in the Streamlit app
-components.html(EXIT_JS)
+#components.html(EXIT_JS)
 
-#streamlit_js_eval(js_expressions = EXIT_JS)
+streamlit_js_eval(js_expressions = EXIT_JS)
 
 
 def main():
