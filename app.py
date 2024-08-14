@@ -263,7 +263,7 @@ def main():
             if (i +1) == len(files2):
                 new = new + AudioSegment.silent(duration=3500)
                 
-            #new = new.append(AudioSegment.silent(duration=100))
+            new = new.append(AudioSegment.silent(duration=25))
             noise = WhiteNoise().to_audio_segment(duration=len(new))
             noise = noise - 28
             noise = noise.low_pass_filter(2700)
