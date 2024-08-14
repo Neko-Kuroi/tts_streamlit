@@ -261,11 +261,11 @@ def main():
 
             new = AudioSegment.from_mp3(x)
             if (i +1) == len(files2):
-                new = new + AudioSegment.silent(duration=4500)
+                new = new + AudioSegment.silent(duration=3500)
                 
             #new = new.append(AudioSegment.silent(duration=100))
             noise = WhiteNoise().to_audio_segment(duration=len(new))
-            noise = noise - 30
+            noise = noise - 28
             noise = noise.low_pass_filter(2700)
             noise.export(f"removefolder/{temp_dir}/sound3/{i:05}.mp3", format="mp3")
             # Open an audio file for reading, just like a regular file:
