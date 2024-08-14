@@ -16,7 +16,7 @@ from pedalboard import Pedalboard, Reverb, Gain, Phaser
 from pedalboard.io import AudioFile
 
 # Make a Pedalboard object, containing multiple audio plugins:
-board = Pedalboard([Gain(gain_db=2), Reverb(room_size=0.00001)])
+board = Pedalboard([Gain(gain_db=2), Reverb(room_size=0.001)])
 
 
 VOICE3 = "en-US-JennyNeural"
@@ -261,7 +261,7 @@ def main():
 
             new = AudioSegment.from_mp3(x)
             if (i +1) == len(files2):
-                new = new + AudioSegment.silent(duration=3500)
+                new = new + AudioSegment.silent(duration=2000)
                 
             new = new.append(AudioSegment.silent(duration=150))
             noise = WhiteNoise().to_audio_segment(duration=len(new))
