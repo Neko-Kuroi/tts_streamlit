@@ -205,7 +205,7 @@ def main():
         files.sort()
         song = AudioSegment.silent(duration=300)
         filter_band_stop = pydub.scipy_effects._mk_butter_filter(
-            [4600,9800], 'bandstop', order=8
+            [5000,9800], 'bandstop', order=8
             )
         progressbar0 = st.empty()
         my_bar0 = progressbar0.progress(0)
