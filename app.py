@@ -296,7 +296,7 @@ def main():
             effected_noise = AudioSegment.from_mp3(f"removefolder/{temp_dir}/sound3/effect_{i:05}.mp3")
             new = new.apply_mono_filter_to_each_channel(filter_band_stop)
             new = new.low_pass_filter(8000)
-            new = new.high_pass_filter(200)
+            new = new.high_pass_filter(100)
             combined = new.overlay(effected_noise)
             #combined = new.overlay(noise)
             #print(new.duration_seconds)
