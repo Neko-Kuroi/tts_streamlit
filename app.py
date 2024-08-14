@@ -315,8 +315,8 @@ def main():
 
             mp3_bytes = load_audio(file_path)
 
-            st.audio(mp3_bytes, format="audio/mpeg", autoplay="true")
-            #st.audio(mp3_bytes, format="audio/mpeg")
+            #st.audio(mp3_bytes, format="audio/mpeg", autoplay="true")
+            st.audio(mp3_bytes, format="audio/mpeg")
             st.download_button(
                 label = 'Download mp3 file',
                 data = mp3_bytes,
