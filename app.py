@@ -16,7 +16,7 @@ from pedalboard import Pedalboard, Reverb, Gain, Phaser
 from pedalboard.io import AudioFile
 
 # Make a Pedalboard object, containing multiple audio plugins:
-board = Pedalboard([Gain(gain_db=2), Reverb(room_size=0.001)])
+board = Pedalboard([Gain(gain_db=1), Reverb(room_size=0.01)])
 
 
 VOICE3 = "en-US-JennyNeural"
@@ -205,7 +205,7 @@ def main():
         files.sort()
         song = AudioSegment.silent(duration=300)
         filter_band_stop = pydub.scipy_effects._mk_butter_filter(
-            [5000,9800], 'bandstop', order=8
+            [5800,9800], 'bandstop', order=8
             )
         progressbar0 = st.empty()
         my_bar0 = progressbar0.progress(0)
