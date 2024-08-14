@@ -23,10 +23,10 @@ VOICE3 = "en-US-JennyNeural"
 VOICE1 = "ja-JP-NanamiNeural" # female voice
 VOICE2 = "ja-JP-KeitaNeural" # male voice
 VOICE5 = 'en-US-AvaNeural'
-#VOICE4 = 'en-US-AndrewNeural'
-#VOICE = 'en-IE-EmilyNeural'
+VOICE6 = 'en-US-AndrewNeural'
+VOICE8 = 'en-IE-EmilyNeural'
 #VOICE = "ko-KR-SunHiNeural"
-#VOICE = "en-GB-SoniaNeural"
+VOICE7 = "en-GB-SoniaNeural"
 VOICE4 = 'fr-FR-VivienneMultilingualNeural'
 # colab side make dir
 def my_makedirs(path):
@@ -109,7 +109,7 @@ def main():
             stopword = ','
             voice = st.selectbox(
                 "Select",
-                ["1","2","3"],
+                ["1","2","3","4","5","6","7"],
                 index = 0
                 )
 
@@ -134,6 +134,14 @@ def main():
         VOICE = VOICE4
     elif voice == "3" and language == "English":
         VOICE = VOICE5
+    elif voice == "4" and language == "English":
+        VOICE = VOICE6
+    elif voice == "5" and language == "English":
+        VOICE = VOICE6
+    elif voice == "6" and language == "English":
+        VOICE = VOICE7
+    elif voice == "7" and language == "English":
+        VOICE = VOICE8
 
     if "voice" not in st.session_state:
         st.session_state.voice = VOICE
