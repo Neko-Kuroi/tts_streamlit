@@ -292,11 +292,11 @@ def main():
                         o.write(effected)
 
             
-            new = add_echo(new, delay=1, num_echos=1, decay=60)
+            new = add_echo(new, delay=1, num_echos=1, decay=100)
             effected_noise = AudioSegment.from_mp3(f"removefolder/{temp_dir}/sound3/effect_{i:05}.mp3")
             new = new.apply_mono_filter_to_each_channel(filter_band_stop)
             new = new.low_pass_filter(8000)
-            new = new.high_pass_filter(180)
+            new = new.high_pass_filter(220)
             combined = new.overlay(effected_noise)
             #combined = new.overlay(noise)
             #print(new.duration_seconds)
