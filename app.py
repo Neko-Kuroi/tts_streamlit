@@ -273,8 +273,8 @@ def main():
                 
             new = new.append(AudioSegment.silent(duration=150))
             noise = WhiteNoise().to_audio_segment(duration=len(new))
-            noise = noise - 28
-            noise = noise.low_pass_filter(2700)
+            noise = noise - 30
+            noise = noise.low_pass_filter(3000)
             noise.export(f"removefolder/{temp_dir}/sound3/{i:05}.mp3", format="mp3")
             # Open an audio file for reading, just like a regular file:
             with AudioFile(f"removefolder/{temp_dir}/sound3/{i:05}.mp3") as f:
@@ -292,7 +292,7 @@ def main():
                         o.write(effected)
 
             
-            new = add_echo(new, delay=1, num_echos=1, decay=100)
+#            new = add_echo(new, delay=1, num_echos=1, decay=100)
             effected_noise = AudioSegment.from_mp3(f"removefolder/{temp_dir}/sound3/effect_{i:05}.mp3")
             new = new.apply_mono_filter_to_each_channel(filter_band_stop)
             new = new.low_pass_filter(8000)
