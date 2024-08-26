@@ -272,6 +272,7 @@ def main():
                 new = new + AudioSegment.silent(duration=2000)
                 
             new = new.append(AudioSegment.silent(duration=150))
+            """
             noise = WhiteNoise().to_audio_segment(duration=len(new))
             noise = noise - 30
             noise = noise.low_pass_filter(3000)
@@ -294,10 +295,12 @@ def main():
             
             new = add_echo(new, delay=1, num_echos=1, decay=100)
             effected_noise = AudioSegment.from_mp3(f"removefolder/{temp_dir}/sound3/effect_{i:05}.mp3")
+            """
             new = new.apply_mono_filter_to_each_channel(filter_band_stop)
             new = new.low_pass_filter(8000)
             new = new.high_pass_filter(220)
-            combined = new.overlay(effected_noise)
+            #combined = new.overlay(effected_noise)
+            combined = new
             #combined = new.overlay(noise)
             #print(new.duration_seconds)
             #new = new.speedup(playback_speed=1.05, chunk_size=150, crossfade=25)
