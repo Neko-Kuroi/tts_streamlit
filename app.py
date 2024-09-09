@@ -153,8 +153,8 @@ def main():
             result = edge_tts.Communicate(
                     seg,
                     VOICE,
-                    rate='-16%',
-                    pitch='-9Hz'
+                    rate='-12%',
+                    pitch='-10Hz'
                     )
             await result.save(f"{save_filepath}")
 
